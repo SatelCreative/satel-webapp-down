@@ -1,0 +1,5 @@
+name: Satel-webapp-down
+description: Remove docker services 
+runs:
+  using: node16
+  main: dist/index.js
