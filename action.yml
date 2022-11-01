@@ -2,7 +2,7 @@ name: Satel-webapp-down
 description: Remove docker services 
 inputs:
   app-name:
-    description: Provide version type [major, minor, patch]
+    description: Name of the Webapp
     required: true
   registry: 
     description: Provides current name of the registry
@@ -10,6 +10,11 @@ inputs:
   clean-branch-name: 
     description: Branch name that was pushed to registry
     required: true  
+
 runs:
-  using: node16
-  main: dist/index.js
+  using: "composite"
+  steps:
+    - run: ${{ github.action_path }}/deploy_server.sh ${{ inputs.app-name }}
+            ${{ inputs.registry }} ${{ inputs.clean-branch-name }} $
+      id: registry
+      shell: bash
