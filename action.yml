@@ -15,6 +15,5 @@ runs:
   using: "composite"
   steps:
     - run: ${{ github.action_path }}/deploy_server.sh ${{ inputs.app-name }}
-            ${{ inputs.registry }} ${{ inputs.clean-branch-name }} $
-      id: registry
+            ${{ inputs.registry }} ${{ inputs.clean-branch-name }}
       shell: bash
