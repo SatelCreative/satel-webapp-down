@@ -3,7 +3,7 @@ description: Remove docker services
 inputs:
   app-name:
     description: Name of the Webapp
-    required: true
+    required: false
   registry: 
     description: Provides current name of the registry
     required: true   
